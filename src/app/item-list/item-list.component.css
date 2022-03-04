@@ -1,0 +1,25 @@
+body {
+    padding: 2rem;
+}
+
+figure img {
+    width: 200px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.display-list {
+    display: flex;
+    flex-direction: row;
+}
+
+.display-list >* {
+    flex-wrap: nowrap;
+}
+
+.search-section {
+    margin-right: 2rem;
+    width: 20rem;
+}

@@ -1,0 +1,95 @@
+    <body>
+        <!-- <router-outlet></router-outlet> -->
+
+        <header 
+            *ngIf="allready"
+            class="d-flex pb-3 mb-5 border-bottom">
+            <h1 class="fs-4">{{ item.name}}</h1>
+        </header>
+        <main>
+            <div class="d-flex border-bottom">
+                <figure class="left-side">
+                    <img id="bigImage" src="{{ 'assets/img/phones/' + phoneId + '.0.jpg' }}" alt="">
+                </figure>
+        
+                <div class="right-side">
+                    <p class="fs-5 col-md-8">{{ item.description }}</p>
+                    <section class="small-images">
+                        <div *ngFor="let image of item.images">
+                            <figure>
+                                <img (click)="changeImage($event)" src="{{ 'assets/' + image }}" alt="">
+                            </figure>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="side-by-side">
+                <div>
+                    <h2>Availability and Networks</h2>
+                    <ul class="icon-list">
+                        <li>
+                            <p>Availability</p>
+                            <p>{{ item.availability }}</p>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Battery</h2>
+                    <ul class="icon-list">
+                    <li>
+                        <p>Type</p>
+                        <!-- <p>{{ item.battery.type }}</p> -->
+                    </li>
+                    <li>
+                        <p>Talk time</p>
+                        <p>{{ item.battery.talkTime }}</p>
+                    </li>
+                    <li>
+                        <p>Standby time (max)</p>
+                        <p>{{ item.battery.standbyTime }}</p>
+                    </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Storage and Memory</h2>
+                    <ul class="icon-list">
+                    <li>
+                        <p>RAM</p>
+                        <p>{{ item.storage.ram }}</p>
+                    </li>
+                    <li>
+                        <p>Internal Storage</p>
+                        <p>{{ item.storage.flash }}</p>
+                    </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Connectivity</h2>
+                    <ul class="icon-list">
+                    <li>
+                        <p>Network Support</p>
+                        <p>WiFi</p>
+                        <p>{{ item.connectivity.wifi }}</p>
+                    </li>
+                    <li>
+                        <p>Bluetooth</p>
+                        <p>{{ item.connectivity.bluetooth }}</p>
+                    </li>
+                    <li>
+                        <p>Infrared</p>
+                        <p>{{ item.connectivity.infrared }}</p>
+                        <!-- <p *ngIf="item.connectivity.infrared === 'true'">{{ <fa-icon [icon]="check"></fa-icon> }}</p> -->
+                        <!-- <p *ngIf="item.connectivity.ifrared === 'false'">{{ <fa-icon [icon]="notCheck"></fa-icon> }}</p> -->
+
+                    </li>
+                    <li>
+                        <p>GPS</p>
+                        <p>{{ item.connectivity.gps }}</p>
+                        <!-- <p *ngIf="item.connectivity.gps">{{ check }}</p> -->
+                    </li>
+                    </ul>
+                </div>
+          </div>
+        </main>
+    </body>
+
