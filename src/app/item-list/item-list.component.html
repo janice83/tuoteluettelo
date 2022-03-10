@@ -74,7 +74,9 @@
       <div class="list-group">
           <div *ngFor="let phone of phones | filter: searchText | sortBy: order" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
               <figure class="rounded float-start rounded-circle flex-shrink-0">
-                  <img src="../../assets/img/phones/{{ phone.id }}.0.jpg" alt="">
+                  <!-- <img src="../../assets/img/phones/{{ phone.id }}.0.jpg" alt=""> -->
+                  <img src="{{'/assets/img/phones/' + phone.id }}.0.jpg" alt="">
+
               </figure>
             <div class="d-flex gap-2 w-100 justify-content-between">
               <div>
