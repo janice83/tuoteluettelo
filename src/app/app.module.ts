@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { ItemListComponent } from './item-list/item-list.component';
 import { ItemComponent } from './item/item.component';
 import { AppRoutingModule } from './app-routing.module';
-import { RouterModule } from '@angular/router';
+// import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { OrderByPipe } from './pipes/.pipe';
 import { FormsModule } from '@angular/forms';
@@ -23,7 +23,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    RouterModule,
+    // RouterModule,
     FontAwesomeModule,
     FormsModule,
     Ng2SearchPipeModule

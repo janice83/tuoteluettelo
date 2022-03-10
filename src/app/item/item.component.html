@@ -8,9 +8,12 @@
         </header>
         <main>
             <div class="d-flex border-bottom">
-                <figure class="left-side">
-                    <img id="bigImage" src="{{ 'assets/img/phones/' + phoneId + '.0.jpg' }}" alt="">
-                </figure>
+                <div class="left-side">
+                    <figure>
+                        <img id="bigImage" src="{{ 'assets/img/phones/' + phoneId + '.0.jpg' }}" alt="">
+                    </figure>
+                    <button class="btn btn-primary" (click)="goBack()">Back</button>
+                </div>
         
                 <div class="right-side">
                     <p class="fs-5 col-md-8">{{ item.description }}</p>
@@ -38,7 +41,7 @@
                     <ul class="icon-list">
                     <li>
                         <p>Type</p>
-                        <!-- <p>{{ item.battery.type }}</p> -->
+                        <p>{{ item.battery.type }}</p>
                     </li>
                     <li>
                         <p>Talk time</p>

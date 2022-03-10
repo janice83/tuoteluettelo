@@ -30,7 +30,6 @@ export class ItemComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.allready = true;
     this.getPhone();
   }
 
@@ -42,12 +41,17 @@ export class ItemComponent implements OnInit {
     });
     this.phoneService.getOneItem(this.phoneId).subscribe(((data: any) => {
       this.item = data;
+      this.allready = true;
     }));
   }
 
   changeImage(event: any) {
     this.getSrc = event.target.getAttribute('src');
     document.getElementById("bigImage")?.setAttribute("src", this.getSrc);
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }
