@@ -80,15 +80,19 @@
                     </li>
                     <li>
                         <p>Infrared</p>
-                        <p>{{ item.connectivity.infrared }}</p>
-                        <!-- <p *ngIf="item.connectivity.infrared === 'true'">{{ <fa-icon [icon]="check"></fa-icon> }}</p> -->
-                        <!-- <p *ngIf="item.connectivity.ifrared === 'false'">{{ <fa-icon [icon]="notCheck"></fa-icon> }}</p> -->
+                        <p *ngIf="item.connectivity.infrared; else infraNotTrue"><fa-icon [icon]="check"></fa-icon></p>
+                        <!-- <p *ngIf="item.connectivity.infrared === 'false'">{{ <fa-icon [icon]="notCheck"></fa-icon> }}</p> -->
+                        <ng-template #infraNotTrue>
+                            <fa-icon [icon]="notCheck"></fa-icon>
+                        </ng-template>
 
                     </li>
                     <li>
                         <p>GPS</p>
-                        <p>{{ item.connectivity.gps }}</p>
-                        <!-- <p *ngIf="item.connectivity.gps">{{ check }}</p> -->
+                        <p *ngIf="item.connectivity.gps; else gpsNotTrue"><fa-icon [icon]="check"></fa-icon></p>
+                        <ng-template #gpsNotTrue>
+                            <fa-icon [icon]="notCheck"></fa-icon>
+                        </ng-template>
                     </li>
                     </ul>
                 </div>
